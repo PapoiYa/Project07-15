@@ -6,26 +6,29 @@ import { RegisterComponent } from './register/register.component';
 import { FrontLayoutComponent } from './layouts/front-layout/front-layout.component';
 
 export const routes: Routes = [
-  {
+    {
        path: '',
        component : FrontLayoutComponent,
        children: [
-     { 
-       path: '',
+      { 
+       path: '', redirectTo: 'home', pathMatch: 'full' 
+      },
+      { 
+       path: 'home',
        component : HomeComponent 
-     },
-     { 
+      },
+      { 
        path: 'about', 
        component : AboutComponent
-     },
-     { 
+      },
+      { 
        path: 'login', 
        component : LoginComponent 
-     },
-     { 
+      },
+      { 
        path: 'register', 
        component : RegisterComponent 
-    },
-    ]
-  }
-];
+      },
+      ]
+    }
+  ];
